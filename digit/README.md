@@ -1,5 +1,9 @@
-# Domain Adaptive Filter Decomposition
+# Digit
 
-This repository contains the reference code for paper [A Dictionary Approach to Domain-Invariant Learning in Deep Networks](https://arxiv.org/pdf/1909.11285.pdf).
+1. Download MNIST and SVHN dataset accordingly.
 
-For experiments of each 
+2. Run
+'''
+train_num_semi.py --gpu # --optimizer adam --learning_rate 0.001 --decay_step 50000 --pp 0.01 --log_dir log_digit
+'''
+You may modify --pp to change the scale of the target domain involved in the training.

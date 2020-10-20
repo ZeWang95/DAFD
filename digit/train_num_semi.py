@@ -126,7 +126,16 @@ def main():
 
     main_list = other_base_list
 
-    optimizer = torch.optim.SGD(net.parameters(), FLAGS.learning_rate, 0.9, weight_decay=0.0001, nesterov=True)
+    # optimizer = torch.optim.SGD(net.parameters(), FLAGS.learning_rate, 0.9, weight_decay=0.0001, nesterov=True)
+    if OPTIMIZER == 'momentum':
+        optimizer = torch.optim.SGD(net.parameters(), BASE_LEARNING_RATE/1, 0.9, weight_decay=0.0001, nesterov=True)
+
+    elif OPTIMIZER == 'adam':
+        optimizer = torch.optim.Adam(net.parameters(), BASE_LEARNING_RATE, weight_decay=0.0001)    ###__0.0001->0.001
+
+    elif OPTIMIZER == 'rmsp':
+        optimizer = torch.optim.RMSprop(net.parameters(), BASE_LEARNING_RATE, weight_decay=0.0001)
+
 
     count = 1
     epoch = 0
