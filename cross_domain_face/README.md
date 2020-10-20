@@ -5,6 +5,7 @@
 2. Modifying the path in train.py according to your data and model placements.
 
 3. Run
-'''
-train.py --gpu # --lr 1e-2 --log_dir log_cross_domain_face
-'''
+
+```python
+train.py --gpu $ --lr 1e-2 --log_dir log_cross_domain_face
+```
